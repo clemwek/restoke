@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h1>Management</h1>
+      </div>
+    </div><!--End of page heading -->
+  <div class="col-sm-4">
+    <!--this is where the navigation will come-->
+    <div class="list-group">
+      <button type="button" class="list-group-item">Stock Summary</button>
+      <button type="button" class="list-group-item" [routerLink]="['/addStock']">Add Stock</button>
+      <button type="button" class="list-group-item">Waiter breakdown</button>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <!--this is where the main content goes-->
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Add Stock</h3>
+      </div>
+      <form action="" (submit)="addNewStock()">
+        <fieldset>
+          <div class="form-group">
+            <div class="control-label">
+							<label for="" class="control-label">Add stock: </label>
+						</div>
+            <div class="col-sm-4">
+              <label class="sr-only" for="">Stock Name: </label>
+              <input type="text" [(ngModel)]="stockName" name="stockName" class="form-control" id="stockName" placeholder="stock name"  title="Please enter the stock name." required>
+              <p class="help-text small">Please enter the stock name.</p>
+              <!--<span class="error"><?php echo isset($fname_error) ? $fname_error : false; ?></span>-->
+            </div>
+            <div class="col-sm-4">
+              <label class="sr-only" for="">Stock Volume: </label>
+              <input type="number" name="stockVolume" class="form-control" id="stockVolume" placeholder="stock volume" [(ngModel)]="stockVolume"  title="Please enter the volume of stock." required>
+              <p class="help-text small">Please enter the volume of stock.</p>
+              <!--<span class="error"><?php echo isset($fname_error) ? $fname_error : false; ?></span>-->
+            </div>
+            <div class="col-sm-4">
+              <label class="sr-only" for="">Stock Cost: </label>
+              <input type="number" [(ngModel)]="stockCost" name="stockCost" class="form-control" id="stockCost" placeholder="stock Cost"  title="Please enter the cost of the stock." required>
+              <p class="help-text small">Please enter the cost of the stock.</p>
+              <!--<span class="error"><?php echo isset($fname_error) ? $fname_error : false; ?></span>-->
+            </div>
+            <div class="col-xs-12">
+              <button class="btn-block btn btn-primary">submit</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>

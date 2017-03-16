@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h1>Complete Serves</h1>
+    </div>
+  </div><!--End of page heading -->
+  <div class="col-sm-4">
+    <!--this is where the navigation will come-->
+    <div class="list-group">
+      <button type="button" class="list-group-item" [routerLink]="['/serve']">Available Stock</button>
+      <button type="button" class="list-group-item" [routerLink]="['/pending_order']">Pending Orders</button>
+      <button type="button" class="list-group-item" [routerLink]="['/pending_payment']">Pending Payment</button>
+      <button type="button" class="list-group-item" [routerLink]="['/complete_serve']">Served</button>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <!--this is where the main content goes-->
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Complete Serves</h3>
+      </div>
+      <table class="table table-hover">
+        <tr>
+          <th>Name</th>
+          <th>Volume</th>
+          <th>cost each</th>
+          <th>Table</th>
+        </tr>
+        <tr *ngFor="let record of completeServe">
+          <th>{{record.name}}</th>
+          <th>{{record.volume}}</th>
+          <th>{{record.cost}}</th>
+          <th>{{record.table}}</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

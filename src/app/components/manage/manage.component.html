@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h1>Management</h1>
+      </div>
+    </div><!--End of page heading -->
+  <div class="col-sm-4">
+    <!--this is where the navigation will come-->
+    <div class="list-group">
+      <button type="button" class="list-group-item">Stock Summary</button>
+      <button type="button" class="list-group-item" [routerLink]="['/addStock']">Add Stock</button>
+      <button type="button" class="list-group-item" [routerLink]="['/breakdown']">Waiter breakdown</button>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <!--this is where the main content goes-->
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Stock Summary</h3>
+      </div>
+      <table class="table table-hover">
+        <tr>
+          <th>Date</th>
+          <th>Name</th>
+          <th>In</th>
+          <th>Out</th>
+          <th>Bal</th>
+        </tr>
+        <tr *ngFor="let record of daySum">
+          <th>{{record.date}}</th>
+          <th>{{record.name}}</th>
+          <th>{{record.volin}} : {{record.costin}}</th>
+          <th>{{record.volout}} : {{record.costout}}</th>
+          <th>{{record.balvol}} : {{record.balcost}}</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
